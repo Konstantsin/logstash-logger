@@ -20,6 +20,7 @@ module LogStashLogger
     autoload :Stderr, 'logstash-logger/device/stderr'
     autoload :Balancer, 'logstash-logger/device/balancer'
     autoload :MultiDelegator, 'logstash-logger/device/multi_delegator'
+    autoload :FallbackTCP, 'logstash-logger/device/fallback_tcp'
 
     def self.new(opts)
       opts = opts.dup
@@ -49,6 +50,7 @@ module LogStashLogger
       case type.to_sym
         when :udp then UDP
         when :tcp then TCP
+        when :fallback_tcp then FallbackTCP
         when :unix then Unix
         when :file then File
         when :redis then Redis

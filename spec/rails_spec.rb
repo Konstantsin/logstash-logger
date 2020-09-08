@@ -11,8 +11,6 @@ module Test
   end
 end
 
-Test::Application.initialize!
-
 describe LogStashLogger do
   include_context 'device'
 
